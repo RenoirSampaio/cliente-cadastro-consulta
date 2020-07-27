@@ -22,6 +22,7 @@
                 <th>Cidade</th>
                 <th>Telefone</th>
                 <th>Email</th>
+                <th>Data de Compra</th>
                 <th></th>
             </tr>
         </thead>
@@ -32,6 +33,7 @@
                     <td>{{ customer.get_full_city }}</td>
                     <td>{{ customer.get_full_phone_number }}</td>
                     <td>{{ customer.email }}</td>
+                    <td>{{ customer.get_buy_date }}</td>
                     <form method="post" action="{{ customer.get_delete_url }}">{% csrf_token %}
                         <td><button type="submit" class="btn btn-danger">Excluir</button></td>
                     </form>

@@ -1,5 +1,4 @@
 from django import forms
-
 from .models import Customer
 
 class DateInput(forms.DateInput):
@@ -47,6 +46,8 @@ class CustomerForm(forms.ModelForm):
         error_messages={"max_length": "Cidade não pode ter mais de 30 caracteres"}
     )
 
+    buy_date = forms.DateField(label="Data da Compra", widget=DateInput())
+
     class Meta:
         model = Customer
         fields = (
@@ -59,4 +60,5 @@ class CustomerForm(forms.ModelForm):
             "country",
             "state",
             "city",
+            "buy_date",
         )

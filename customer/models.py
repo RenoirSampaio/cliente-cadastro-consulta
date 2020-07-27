@@ -12,6 +12,7 @@ class Customer(models.Model):
   country = models.CharField(max_length = 30)
   state = models.CharField(max_length = 30)
   city = models.CharField(max_length = 30)
+  # buy_date = models.DateField()
 
   created_date = models.DateTimeField(auto_now_add = True)
   update_date = models.DateTimeField(auto_now = True)
@@ -28,6 +29,9 @@ class Customer(models.Model):
 
   def get_full_city(self):
     return f"{self.city} - {self.state}"
+
+  # def get_buy_date(self):
+  #   return f"{self.buy_date}"
 
   def get_absolute_url(self):
     return reverse("customer:customer-update", kwargs={"id": self.id})

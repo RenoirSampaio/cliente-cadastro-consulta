@@ -27,6 +27,7 @@ class Migration(migrations.Migration):
                 ('created_date', models.DateTimeField(auto_now_add=True)),
                 ('update_date', models.DateTimeField(auto_now=True)),
                 ('active', models.BooleanField(default=True)),
+                ('buy_date', models.DateField()),
             ],
             options={
                 'db_table': 'customer',
